@@ -5,7 +5,7 @@ import json
 
 class NCRequester:
 
-    def __init__(self, hostname: str, port: int, actions: Optional[dict] = None) -> None:
+    def __init__(self, port: int, hostname: str = "socket.cryptohack.org", actions: Optional[dict] = None) -> None:
         self._hostname: str = hostname
         self._port: int = port
         self._actions: dict = {} if not actions else actions
