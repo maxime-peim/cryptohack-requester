@@ -4,8 +4,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='CHRequester-Maxou',
-    version='0.0.4',
+    name='CHRequester',
+    version='0.0.1',
     author='Maxime Peim',
     author_email='maxime.peim@gmail.com',
     description='Cryptohack URL/NetCat request maker.',

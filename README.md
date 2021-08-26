@@ -47,7 +47,7 @@ if __name__ == "__main__":
     # be given as bytes, the requester is in charge to send it as hex to the web 
     # server. If some day the Web API changes, and some arguments are not expected
     # to be in hexadecimal, changes will be needed.
-    error_message = req.do_action('send_cmd', 'error', ciphertext=b'\xff', nonce=b'\xff')
+    error_message = R.do_action('send_cmd', 'error', ciphertext=b'\xff', nonce=b'\xff')
 
     # do awesome things to find the flag
 ```
@@ -77,11 +77,11 @@ if __name__ == "__main__":
     # As for the Web API, we can execute action, except this time
     # the user is responsible to put input data into the correct
     # format used by the server-side.
-    msg = req.do_action("insert_key", "msg", key=(b"\x00" * 16).hex())
+    msg = R.do_action("insert_key", "msg", key=(b"\x00" * 16).hex())
 
     print(msg)
 
-    flag = req.do_action("unlock", "msg")
+    flag = R.do_action("unlock", "msg")
 
     # do awesome things to find the flag
 
@@ -106,7 +106,7 @@ if __name__ == "__main__":
     R.flush_line()
 
     PAYLOAD = {'msg': 'request'}
-    ciphertext = b64decode(req.send_recv_raw_payload(PAYLOAD, 'ciphertext'))
+    ciphertext = b64decode(R.send_recv_raw_payload(PAYLOAD, 'ciphertext'))
 
     # do awesome things to find the flag
 
